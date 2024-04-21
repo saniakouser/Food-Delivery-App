@@ -5,9 +5,9 @@ import classes from "./page.module.css";
 import Link from "next/link";
 import { getMeals } from "@/lib/meals";
 
-async function Meals(){
-    const meal= await getMeals();
-    return   <MealGrid meals={meals}/>
+async function MealsSupply() {
+    const meals = await getMeals();
+    return <MealGrid meals={meals} />;
 }
 
 export default function Meal() {
@@ -25,9 +25,8 @@ export default function Meal() {
 
             <main className={classes.main}>
                 <Suspense fallback={<p className={classes.loading}>Fetching meals.....</p>}>
-                <Meal/>
+                    <MealsSupply />
                 </Suspense>
-                
             </main>
         </>
     );
